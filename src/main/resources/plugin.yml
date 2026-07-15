@@ -1,8 +1,24 @@
 name: LuckyVNCore
 version: '${project.version}'
 main: com.seul.luckyvncore.LuckyVNCore
-api-version: '1.13'
+api-version: '1.21.11'
 authors: [Crush_Seul]
 description: LUCKYVN CORE plugin for LUCKYVN NETWORK. It plugin have many API for plugin in SERVER and support me make many fantasy plugins 
 website: luckyvn.com
 folia-supported: true
+commands:
+  tb:
+    description: Thông báo toàn server.
+    usage: /tb <message>
+    permission: luckyvncore.tb
+    permission-message: Bạn không có quyền dùng lệnh này.
+  lkchat:
+    description: Gửi chat dưới danh tính người chơi trực tuyến.
+    usage: /lkchat <player> <message>
+    permission: luckyvncore.lkchat
+    permission-message: Bạn không có quyền dùng lệnh này.
+permissions:
+  luckyvncore.tb:
+    default: op
+  luckyvncore.lkchat:
+    default: op

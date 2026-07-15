@@ -137,6 +137,16 @@ public class LKUtils {
                 }
                 if (finalCommand.contains("[message]")) {
                     LKUtils.sendMessage(sender, finalCommand.replace("[message] ", ""));
+                    return;
+                }
+                if (finalCommand.contains("[broadcast]")) {
+                    String message = LKUtils.color(finalCommand.replace("[broadcast] ", ""));
+                    Bukkit.broadcastMessage(message);
+                    Bukkit.getConsoleSender().sendMessage(message);
+                    return;
+                }
+                if (finalCommand.contains("[chat]") && sender instanceof Player) {
+                    ((Player) sender).chat(finalCommand.replace("[chat] ", ""));
                 }
             }
         }).runTask(LuckyVNCore.plugin);
@@ -300,5 +310,4 @@ public class LKUtils {
     }
 
 }
-
 
